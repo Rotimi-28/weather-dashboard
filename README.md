@@ -19,9 +19,14 @@ The website provides the current and 5 -days forecast for the user provided city
 * Open weather api
 
 ## Website
-
+- [https://rotimi-28.github.io/weather-dashboard/]
 
 
 
 ## Contribution
  By Rotimi-28
+
+## Screen-Shots
+ ![](screen1.png)
+
+ ![](screen2.png)
