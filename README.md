@@ -26,6 +26,7 @@ This website provides the current and up to  5 -days forecast for the user provi
  By Rotimi-28
 
 ## Screen-Shots
- ![](screen1.png)
+ ![](<img width="1440" alt="screen1" src="https://user-images.githubusercontent.com/96090900/180579918-14d8b695-45a4-4a68-a7e7-3c0aa9d78113.png">
 
- ![](screen2.png)
+ ![](<img width="1440" alt="screen2" src="https://user-images.githubusercontent.com/96090900/180579946-0c5c00fc-f7f8-4971-923b-5fefedfa08b0.png">
+)
