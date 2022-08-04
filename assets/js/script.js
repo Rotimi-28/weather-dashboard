@@ -2,7 +2,7 @@
 var cityformE1 = document.querySelector("#city-form");
 var cityInputE1 = document.querySelector("#cityname");
 var cityContainer = document.querySelector("#city-container");
-var citySearchTerm = document.querySelector("#ciy-search-term");
+var citySearchTerm = document.querySelector("#city-search-term");
 var tempContainer = document.querySelector("#today-temp");
 var searchHistory = document.querySelector("#search-history")
 var forecastContainer = document.querySelector("#forecast-container");
@@ -31,7 +31,7 @@ var getForecast = function(lat, lon) {
                       "&lat=" + lat +
                       "&lon" + lon +
                       "&exclude=minutely,hourly?q=" +
-                      "&appid=dff32d49f903ec23ca2e10dc6f168410&units=imperial";
+                      "&appid=1b380533361ffb36b29fe09b1a5c8763";
     // request forecast url
     fetch(forecastUrl).then(function(response) {
         console.log(response)
@@ -76,7 +76,7 @@ var getCityWeather = function(cityname) {
     //format the weather api url
     var apiUrl = "https://api.openweathermap.org/data/2.5/onecall?" +
                  cityname +
-                 "&appid=dff32d49f903ec23ca2e10dc6f168410&units=imperial";
+                 "&appid=1b380533361ffb36b29fe09b1a5c8763";
         
                  //request the url
             fetch(apiUrl).then(function(response) {
@@ -113,13 +113,13 @@ var getCityWeather = function(cityname) {
                 } else {
                     //empty
                     citySearchTerm.innerHTML = "";
-                    cityContainerE1.innerHTML = "";
-                    cityContainerE1.textContent = "No city found";
+                    cityContainer.innerHTML = "";
+                    cityContainer.textContent = "No city found";
                 };
             })
             .catch(function(error) {
-                cityContainerE1.innerHTML= "";
-                cityContainerE1.textContent = "unable to connect to api";
+                cityContainer.innerHTML= "";
+                cityContainer.textContent = "unable to connect to api";
             });
 
             citySearchTerm.textContent = cityname.toUpperCase().charAt(0) + cityname.slice(1);
@@ -127,11 +127,12 @@ var getCityWeather = function(cityname) {
             console.log(cityname);
 
             var searchHistoryEl = document.createElement("li");
-            searchHistoryE1.classAnme = "card";
-            searchHistoryE1.textContent = cityname.toUpperCase().charAt(0) + cityname.slice(1);
-            historySearch.appendChild(searchHistoryEl);
+            searchHistoryEl.classAnme = "card";
+            searchHistoryEl.textContent = cityname.toUpperCase().charAt(0) + cityname.slice(1);
+            //historySearch.appendChild(searchHistoryEl);
 
 }
 
 cityformE1.addEventListener("submit", formSubmitHandler);
 
+//https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude=&appid=1b380533361ffb36b29fe09b1a5c8763
