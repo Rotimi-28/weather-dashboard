@@ -9,49 +9,63 @@
     <link rel="stylesheet" href="./assets/css/style.css"/>
     <title>Weather Dashboard</title>
 </head>
-<body >
-    <header class="title">
-        <h1 class="brand-logo center">5-Days Weather Dashboard</h1>
+<body class="wrapper">      
+    <header class="hero">
+      <h1 class="app-title">Weather Dashboard</h1>
+      <p>Search for a City to see the weather forcast.</p>
     </header>
-    <!--To DO go through bootstrap customization chapter-->
-    <main class="content pure-g">
-        <div class="pure-u-1 pure-u-md-1-5" >
-            <div  id="search-section">
-                <h2>Search for a City:</h2>
-                <form class="search-form">      
-                    <div class="input-field">             
-                        <input id="search" class="enter-text" type="search" required>
-                        <button type="submit" class="pure-button pure-button-primary btn">Search</button>
-                       
-                    </div>           
-                </form>
-              <ul class="search-history">            
-             </ul>
-            </div>            
-        </div> 
-        <div class="pure-u-1 pure-u-md-4-5">
-            <div class="pure-g">
-                <div class="pure-u-1">
-                    <ul class="weather-today"/>
-                      
-                    </ul> 
-                </div>
-                <div class="pure-u-1 header-forecast">
-                    
-                </div>
+</div>
 
-                <div class="pure-u-1">
-                    <div class="pure-g forecast">
-                        
-                    </div>
-                </div>                         
-            </div>                    
+<main > <!--flex-row justify-space-between-->
+    <div class="body-grid-container">
+        <div class="box1">
+            <div class="card">
+                <h4 class="card-header">Search for City:</h4>
+                <form id="city-form" class="card-body">
+                    <label class="form-lable" for="cityname"></label>
+                    <input name="cityname" id="cityname" tpye="text" autofocus="true" class="form-input" />
+                    <button type="submit" class="btn" id="save-history">submit</button>
+                </form>
+                <div class="card">
+                    <h4 class="card-header"></h4>
+                      <div class="card-body" id="history-search">
+                        <ul>
+                            
+                        </ul>
+                      </div>
+                  </div>
+            </div>
         </div>
-    </main>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <div class="box2" id="today">
+            <div class ="card">
+                <h4 class="subtitle"><span id="city-search-temp"></span></h4>
+                <div id="city-container" class="list-group">
+                    <div class="row">
+                        <div id="today-temp"></div>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box3">
+            <div class ="card">
+                <h4 class="subtitle">5-Days Weather Forecast <span id="search-term"></span></h4>
+                <div class="forecast-wrapper">
+                    <div class="forecast-grid-container" id="forecast-container">
+                        <div class= "card" id="forecastBox1">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
     
-    <script src="./assets/js/script.js"></script>
+</div>
+</main>
+
+<script src="./assets/js/script.js"></script>
+
 </body>
 </html>
 
