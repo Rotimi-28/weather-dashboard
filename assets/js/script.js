@@ -25,14 +25,6 @@ var formSubmitHandler = function(event) {
     }
 };
 
-// var CityHistory = $("#text")
-//       .val()
-//       .trim();
-//       console.log(CityHistory);
-//       Cities.push(CityHistory);
-      
-//       renderSavedCities(Cities);
-
 var getForecast = function(lat, lon) {
     //the forecasr api
     var forecastUrl = "https://api.openweathermap.org/data/2.5/onecall?" +
@@ -142,19 +134,7 @@ var getCityWeather = function(cityname) {
             searchHistoryEl.textContent = cityname.toUpperCase().charAt(0) + cityname.slice(1);
             historySearch.appendChild(searchHistoryEl);
 
-            // set date 
-            // date.setDate(date.getDate() + 1);
-            // var dd = date.getDate();
-            // var mm = date.getMonth() + 1;
-            // var y = date.getFullYear();
-            // var fiveFormattedDate = mm + "/" + dd + "/" + y;
-            
-            // fiveDay.append(icon);
-            // fiveDay.append(forecastTemp);
-            // fiveDay.append(forecastHumidity);
-            // fiveDay.append(fiveFormattedDate);
-
-            // $("five-day").append(fiveday);
+        
             
 }
 
