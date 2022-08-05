@@ -25,13 +25,22 @@ var formSubmitHandler = function(event) {
     }
 };
 
+// var CityHistory = $("#text")
+//       .val()
+//       .trim();
+//       console.log(CityHistory);
+//       Cities.push(CityHistory);
+      
+//       renderSavedCities(Cities);
+
 var getForecast = function(lat, lon) {
     //the forecasr api
     var forecastUrl = "https://api.openweathermap.org/data/2.5/onecall?" +
                       "&lat=" + lat +
                       "&lon" + lon +
                       "&exclude=minutely,hourly?q=" +
-                      "&appid=1b380533361ffb36b29fe09b1a5c8763";
+                      "&appid=1b380533361ffb36b29fe09b1a5c8763"; +
+                      "&units=imperial"
     // request forecast url
     fetch(forecastUrl).then(function(response) {
         console.log(response)
@@ -74,9 +83,11 @@ var getForecast = function(lat, lon) {
 
 var getCityWeather = function(cityname) {
     //format the weather api url
-    var apiUrl = "https://api.openweathermap.org/data/2.5/onecall?" +
-                 cityname +
-                 "&appid=1b380533361ffb36b29fe09b1a5c8763";
+    var apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=" +
+    cityname +
+    "&appid=1b380533361ffb36b29fe09b1a5c8763"; +
+    "&units=imperial"
+
         
                  //request the url
             fetch(apiUrl).then(function(response) {
@@ -97,7 +108,7 @@ var getCityWeather = function(cityname) {
 
                     //create & dislplay
                     var degree = document.createElement("h4");
-                    var hemf = (response.main.temp - 273.15) * 1.80 +32;
+                    var hemf = (response.main.temp - 273.15) * 1.80 + 32;
                     tempContainer.appendChild(degree);
 
                     var humidity = document.createElement("h4");
@@ -127,12 +138,24 @@ var getCityWeather = function(cityname) {
             console.log(cityname);
 
             var searchHistoryEl = document.createElement("li");
-            searchHistoryEl.classAnme = "card";
+            searchHistoryEl.className= "card";
             searchHistoryEl.textContent = cityname.toUpperCase().charAt(0) + cityname.slice(1);
-            //historySearch.appendChild(searchHistoryEl);
+            historySearch.appendChild(searchHistoryEl);
 
+            // set date 
+            // date.setDate(date.getDate() + 1);
+            // var dd = date.getDate();
+            // var mm = date.getMonth() + 1;
+            // var y = date.getFullYear();
+            // var fiveFormattedDate = mm + "/" + dd + "/" + y;
+            
+            // fiveDay.append(icon);
+            // fiveDay.append(forecastTemp);
+            // fiveDay.append(forecastHumidity);
+            // fiveDay.append(fiveFormattedDate);
+
+            // $("five-day").append(fiveday);
+            
 }
 
 cityformE1.addEventListener("submit", formSubmitHandler);
-
-//https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude=&appid=1b380533361ffb36b29fe09b1a5c8763
